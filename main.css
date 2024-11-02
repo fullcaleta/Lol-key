@@ -116,7 +116,7 @@ body {
     margin-top: 0.5em;
 }
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 0px) {
     #video-streams {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         width: 95%;
