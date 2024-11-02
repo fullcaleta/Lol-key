@@ -15,6 +15,7 @@ body {
     top: 45%;
     left: 45%;
     transform: translate(-50%, -50%);
+    z-index: 10; /* Asegura que el botón esté encima */
 }
 
 #video-streams {
@@ -23,6 +24,7 @@ body {
     height: 100vh;
     width: 100vw;
     margin: 0 auto;
+    position: relative; /* Posiciona el contenedor para z-index */
     overflow: hidden;
 }
 
@@ -34,6 +36,8 @@ body {
     width: 100%; /* Ajusta el ancho al 100% */
     border: 2px solid black;
     background-color: #203A49;
+    position: relative; /* Permite que el video tenga un z-index */
+    z-index: 20; /* Asegura que el video esté encima de otros elementos */
 }
 
 .video-player {
@@ -65,6 +69,7 @@ body {
     text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
     box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
     position: relative;
+    z-index: 10; /* Asegura que el botón esté encima */
 }
 
 .neon-button::before {
@@ -115,6 +120,7 @@ body {
     display: none;
     justify-content: center;
     margin-top: 0.5em;
+    z-index: 15; /* Asegura que los controles estén encima */
 }
 
 @media screen and (max-width: 600px) {
