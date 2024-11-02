@@ -1,64 +1,61 @@
-body {
-    background: #0F2027;
-    background: -webkit-linear-gradient(to right, #642c2c, #432020, #270f0f);
+body{
+    background:#0F2027;
+    background:-webkit-linear-gradient(to right, #642c2c, #432020, #270f0f) ;
     background: linear-gradient(to right, #642c2c, #432020, #270f0f);
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: "Balsamiq Sans", cursive;
-    color: var(--clr-neon);
 }
 
-#join-btn {
+#join-btn{
     position: fixed;
-    top: 45%;
-    left: 45%;
-    transform: translate(-50%, -50%);
-    z-index: 10; /* Asegura que el botón esté encima */
+    top:45%;
+    left:45%;
+    margin-top:-50px;
+    margin-left:-100px;
+   
 }
 
-#video-streams {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+#video-streams{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     height: 100vh;
     width: 100vw;
-    margin: 0 auto;
-    position: relative; /* Posiciona el contenedor para z-index */
-    overflow: hidden;
+    margin:0 auto;
 }
 
-.video-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%; /* Mantiene la altura completa */
-    width: 100%; /* Ajusta el ancho al 100% */
+.video-container{
+    max-height: 100%;
     border: 2px solid black;
     background-color: #203A49;
-    position: relative; /* Permite que el video tenga un z-index */
-    z-index: 20; /* Asegura que el video esté encima de otros elementos */
 }
 
-.video-player {
-    height: auto; /* Ajusta la altura automáticamente */
-    width: 100%; /* Asegura que el video ocupe el 100% del contenedor */
-    max-height: 100%; /* Limita la altura máxima para no desbordarse */
+.video-player{
+    height: 100%;
+    width: 100%;
 }
 
 :root {
     --clr-neon: hsl(0, 100%, 54%);
     --clr-bg: hsl(323 21% 16%);
-}
-
-*,
-*::before,
-*::after {
+  }
+  
+  *,
+  *::before,
+  *::after {
     box-sizing: border-box;
-}
-
-.neon-button {
+  }
+  
+  body {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    /* background: var(--clr-bg); */
+    font-family: "Balsamiq Sans", cursive;
+    color: var(--clr-neon);
+    padding-right: 10rem;
+  }
+  
+  .neon-button {
     font-size: 3rem;
+  
     display: inline-block;
     cursor: pointer;
     text-decoration: none;
@@ -66,13 +63,15 @@ body {
     border: var(--clr-neon) 0.125em solid;
     padding: 0.25em 1em;
     border-radius: 0.25em;
+  
     text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+  
     box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
+  
     position: relative;
-    z-index: 10; /* Asegura que el botón esté encima */
-}
-
-.neon-button::before {
+  }
+  
+  .neon-button::before {
     pointer-events: none;
     content: "";
     position: absolute;
@@ -81,12 +80,13 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
+  
     transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
     filter: blur(1em);
     opacity: 0.7;
-}
-
-.neon-button::after {
+  }
+  
+  .neon-button::after {
     content: "";
     position: absolute;
     top: 0;
@@ -98,33 +98,31 @@ body {
     background-color: var(--clr-neon);
     z-index: -1;
     transition: opacity 100ms linear;
-}
-
-.neon-button:hover,
-.neon-button:focus {
+  }
+  
+  .neon-button:hover,
+  .neon-button:focus {
     color: var(--clr-bg);
     text-shadow: none;
-}
-
-.neon-button:hover::before,
-.neon-button:focus::before {
+  }
+  
+  .neon-button:hover::before,
+  .neon-button:focus::before {
     opacity: 1;
-}
-
-.neon-button:hover::after,
-.neon-button:focus::after {
+  }
+  .neon-button:hover::after,
+  .neon-button:focus::after {
     opacity: 1;
-}
-
-#stream-controls {
+  }
+#stream-controls{
     display: none;
     justify-content: center;
-    margin-top: 0.5em;
-    z-index: 15; /* Asegura que los controles estén encima */
+    margin-top:0.5em;
 }
 
-@media screen and (max-width: 600px) {
-    #video-streams {
-        grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
+@media screen and (max-width:1400px){
+    #video-streams{
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        width: 95%;
     }
-}
+} 
